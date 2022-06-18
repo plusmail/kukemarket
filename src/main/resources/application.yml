@@ -1,16 +1,27 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:test
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:mem:test
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  password: rootroot
+  url: jdbc:mysql://localhost:3306/coffeemukka_test?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+  username: root
+
   jpa:
-    hibernate:
-      ddl-auto: create
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
     show-sql: true
-    properties:
-      hibernate:
-        default_batch_fetch_size: 100
+
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        default_batch_fetch_size: 100
 
   profiles:
     active: local
